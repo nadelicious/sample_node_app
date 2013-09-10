@@ -1,4 +1,4 @@
-#[Node-Sample Application by Ronald Gemao]
+#[Node-Sample Application with User Authentication and simple CMS]
 
 ####A basic login & simple content management system built in Node.js with the following features :
 
