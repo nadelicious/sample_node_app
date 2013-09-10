@@ -1,23 +1,42 @@
-## Flat file database module
+#[Node-Sample Application by Ronald Gemao]
 
-Sample usage:
+####A basic login & simple content management system built in Node.js with the following features :
 
-	var db = require('./lib/db');
+* New User Account Creation
+* Ability to Update / Deactivitate Account
+* Session Tracking for Logged-In /Logged out User
+* Password Encryption
+*Upload Photo
 
-	db.connect('');
+* User can post Items
+* User can search and locate Items
+* User can upload pics for his items
+*User can update and delete his posts
 
-	db.connection.on('error', function (err) {
-		console.log(err);
-	});
 
-	db.connection.on('open', function (db) {
-		var task = db.model('Tasks');
+####This node sample application is built on top of the following libraries :
 
-		task.insert({ entry : "Learn javascript" }, function (err, entry) {
-			if (err) console.log(err);
-			else console.log(entry);
-		});
-	});
+* [Node.js](http://nodejs.org/) - Application Server
+* [Express.js](http://expressjs.com/) - Node.js Web Framework
+* [MongoDb](http://www.mongodb.org/) - Database Storage
+* [Ejs](https://github.com/visionmedia/ejs) - HTML Templating Engine
+* [Stylus](http://mongoosejs.com/ - mongodb object modeling for node.js
+* [Underscorejs](http://underscorejs.org/) - Node.js > SMTP Server Middleware
+* [Moment.js](http://momentjs.com/) - Lightweight Date Library
+* [Twitter Bootstrap](http://twitter.github.com/bootstrap/) - UI Component & Layout Library
 
-Sample usage with express: 
-	- See express_app.js file
+
+#### NOTE
+
+* This node application  is not already finished but it is working according to its functionalities.
+* There are some minor touches and algorithms need to be added. :)
+* Design is not already finalized. :)
+
+
+#### SPECIAL THANKS
+
+* SINET and Staff
+*Mr. James  Santos, Mr. Eleazar Pepito
+* USC CISCO LAB and Faculty
+
+
