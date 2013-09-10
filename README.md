@@ -6,15 +6,11 @@
 * Ability to Update / Deactivitate Account
 * Session Tracking for Logged-In /Logged out User
 * Password Encryption
-* Upload Photo
-
+* User can upload his profile photo
 * User can post Items
 * User can search and locate Items
 * User can upload pics for his item
 * User can update and delete his posts
-
-
-* MongoDb is the database for this project.
 
 
 ####This node sample application is built on top of the following libraries :
@@ -24,7 +20,7 @@
 * [MongoDb](http://www.mongodb.org/) - Database Storage
 * [Ejs](https://github.com/visionmedia/ejs) - HTML Templating Engine
 * [Mongoose](http://mongoosejs.com/) - Mongodb object modeling for node.js
-* [Underscorejs](http://underscorejs.org/) - Node.js > Utility-belt library for JavaScript
+* [Underscorejs](http://underscorejs.org/) -  Utility-belt library for JavaScript
 * [Moment.js](http://momentjs.com/) - Lightweight Date Library
 * [Twitter Bootstrap](http://twitter.github.com/bootstrap/) - UI Component & Layout Library
 
@@ -32,7 +28,7 @@
 #### NOTE
 
 * This node application  is not already finished but it is working according to its functionalities.
-* There are some minor touches and algorithms need to be added. :)
+* There are some minor touches and algorithms( e.g redirections, trappings etc.) need to be added. :)
 * Design is not already finalized. :) (very very busy)
 
 
