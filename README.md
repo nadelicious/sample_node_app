@@ -23,7 +23,7 @@
 * [Express.js](http://expressjs.com/) - Node.js Web Framework
 * [MongoDb](http://www.mongodb.org/) - Database Storage
 * [Ejs](https://github.com/visionmedia/ejs) - HTML Templating Engine
-* [Stylus](http://mongoosejs.com/ - Mongodb object modeling for node.js
+* [Mongoose](http://mongoosejs.com/ - Mongodb object modeling for node.js
 * [Underscorejs](http://underscorejs.org/) - Node.js > Utility-belt library for JavaScript
 * [Moment.js](http://momentjs.com/) - Lightweight Date Library
 * [Twitter Bootstrap](http://twitter.github.com/bootstrap/) - UI Component & Layout Library
