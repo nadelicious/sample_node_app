@@ -1,4 +1,4 @@
-#[Node-Sample Application with User Authentication and simple CMS]
+#[Node-Sample Application with User Authentication and a simple advertisement system]
 
 ####A basic login & simple advertisement system built in Node.js with the following features :
 
