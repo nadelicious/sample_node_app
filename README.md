@@ -3,14 +3,14 @@
 ####A basic login & simple content management system built in Node.js with the following features :
 
 * New User Account Creation
-* Ability to Update / Deactivitate Account
+* Ability to Update  Account
 * Session Tracking for Logged-In /Logged out User
 * Password Encryption
-* User can upload his profile photo
-* User can post Items
-* User can search and locate Items
-* User can upload pics for his item
-* User can update and delete his posts
+* Ability to upload profile photo
+* Ability to post items
+* Ability to search items(autosuggestion)
+* Ability to upload item pics
+* Ability to update and delete posts
 
 
 ####This node sample application is built on top of the following libraries :
