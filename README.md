@@ -1,6 +1,6 @@
 #[Node-Sample Application with User Authentication and simple CMS]
 
-####A basic login & simple content management system built in Node.js with the following features :
+####A basic login & simple advertisement system built in Node.js with the following features :
 
 * New User Account Creation
 * Ability to Update  Account
