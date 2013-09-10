@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guitar Center </title>
+<% include /templates/common/stylesheet %>	
+</head>
+<body>
+<header class="class="header">
+	<div class="container">
+		<% include /templates/index/index_header %>
+	</div>
+</header>
+<div class="container">	
+	<section class="content">
+		<article class="pull-left left-index-content">
+			<% include /templates/index/index_left_content %>
+		</article>
+		<article class="pull-left right-index-content">
+			<% include /templates/index/index_right_content %>
+		</article>
+	</section>
+</div>
+<footer class="footer">
+	<% include /templates/common/footer %>	
+</footer>
+	<% include /templates/common/javascript %>	
+<script type="text/javascript">
+	$(function(){
+		global.registerUser($('#register-form'));
+		global.loginUser($('#login-form'));
+	});
+</script>
+</body>
+</html>

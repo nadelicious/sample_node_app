@@ -1,0 +1,25 @@
+<form method="post" id="post-form" class="post-form" enctype="multipart/form-data" action="/result/post-item">
+	<h2 class="form-signin-heading">Post your item here !</h2>
+	<input type="hidden" name="user_id" value="<%= user_sess._id %>">
+	<input type="hidden" name="username" value="<%= user_sess.username %>">
+	<input type="text" name="itemname" placeholder="Item Name" class="input-block-level" required autocomplete="off">
+	<select name="sale_type" class="input-block-level">
+		<option value="For Sale">Sell</option>
+		<option value="For Trade">Trade</option>
+		<option value="To Buy">Buy </option>
+	</select>
+	<input type="text" name="price_range" placeholder="Price Range" class="input-block-level" required autocomplete="off">
+	<select name="guitar_type" class="input-block-level">
+		<option value="Electric guitar">Electric guitar</option>
+		<option value="Bass guitar">Bass guitar</option>
+		<option value="Acoustic guitar">Acoustic guitar</option>
+	</select>
+	<input type="text" name="brand" placeholder="Brand" class="input-block-level" required autocomplete="off">
+	<textarea name="description" placeholder="Describe your item"  required class="form-textarea"></textarea>
+	<textarea name="tags" placeholder="Tags"  required  autocomplete="off"></textarea>
+	<input type="file" name="image1"  class="input-block-level" >
+	<input type="file" name="image2"  class="input-block-level" >
+	<input type="text" name="location" placeholder="Location" class="input-block-level"  required autocomplete="off" >
+	<input type="text" name="contact_no" placeholder="Contact Number" class="input-block-level"   required autocomplete="off">
+	<input type="submit" class="btn btn-large btn-primary" value="submit">
+</form>

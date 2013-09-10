@@ -1,0 +1,18 @@
+<div class="teaser-container">
+	<% if(data.teaser.length!=0){%>
+		<h3>Latest Posts</h3>
+		<ul class="row">
+			<% data.teaser.forEach(function(item){ %>
+				<li class="span2">
+					<image src="/images/img/<%= item.image1 %>">
+					<p><%= item.itemname %></p>
+					<p class="price"> <%= item.price_range %></p>
+					<!--<a class="btn" href="/result/item/?item_id=<%= item._id %>">View details &raquo;</a>-->
+					<p class="sale_type"> <%= item.sale_type %></p>
+				</li>
+			<% }) %>	
+		</ul>
+	<% } else {%>
+	 <h3>No Results</h3>
+    <% } %>		
+</div>

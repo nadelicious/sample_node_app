@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guitar Center </title>
+<% include /templates/common/stylesheet %> 
+</head>
+<body>
+<header class="class="header">
+	<% include /templates/result/result_header %>
+</header>
+<div class="container">	
+	<section class="content">
+		<article class="pull-left left-result-content">
+			<% include /templates/result/result_left_content %>
+		</article>
+		<article class="pull-left right-result-content"> <% content %>
+			<div class="main-content"> 
+				<% if(content=='addpost'){ %>
+					<% include /templates/result/result_user_form_content %>
+				<% } %>	
+				<%if(content=='mypost'){ %>	
+					<% include /templates/result/result_user_post_content %>
+				<% } %>		
+				<% if(content=='settings'){ %>	
+					<% include /templates/result/result_user_settings_content %>
+				<% } %>		
+				<% if(content=='home' || content=='item' ) {%>	
+					<% include /templates/result/result_user_home_content %>
+				<% } %>		
+			</div>
+		</article>
+	</section>
+</div>
+<footer class="footer">
+	<% include /templates/common/footer %> 
+</footer>
+<% include /templates/common/javascript %> 
+<script type="text/javascript">
+$(function(){
+	//global.postItem($('#post-form'));
+	global.editUser($('#user-form'));
+	global.searchItem($('#query'),$('#search-container'));
+});
+</script>
+</body>
+</html>

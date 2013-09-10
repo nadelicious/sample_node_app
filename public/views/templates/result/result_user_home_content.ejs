@@ -1,0 +1,43 @@
+<% if(data.main_content._id!=null){ %>
+	<h3>Latest Post</h3>
+	<div class="home-item-poster"> 
+		<ul>
+			<li><b>Posted by:</b> <%= data.main_content.username %>  </li>
+			<li><b>Date Posted:</b>  <%= data.main_content.date_posted %>  </li>
+			<li><b>Location:</b>   <%= data.main_content.location %> </li>
+		</ul>
+	</div>	
+
+	<div class="home-item-profile"> 
+		<ul>
+			<li><b><span class="sale-type"><%= data.main_content.sale_type %></span> </b>  </li>
+			<li><b>Item name:</b>   <%= data.main_content.itemname %> </li>
+			<li><b>Guitar Type: </b>  <%= data.main_content.guitar_type %> </li>
+			<li><b>Brand: </b>  <%= data.main_content.brand %> </li>
+			<li><b>Price Range:</b> <span class="price-range">  <%= data.main_content.price_range %></span> </li>
+		</ul>
+	</div>	
+
+	<div class="home-item-description">
+		<b>Item Description</b>
+		<p><%= data.main_content.description %> </p>
+	</div>
+
+	<div class="home-item-photos"> 
+		<b>Photos</b>
+		<ul class="row">
+			<li class="span2"><img src="/images/img/<%= data.main_content.image1 %>"> </li>
+			<li class="span2"><img src="/images/img/<%= data.main_content.image2 %>"> </li>
+		</ul>
+	</div>	
+		
+
+	<div class="home-item-contact"> 
+		<ul>
+			<li><b>Contacts:</b> <%= data.main_content.contact_no %>  </li>
+		</ul>
+	</div>	
+<% } else { %>
+ <p>No Results </p>
+<% } %>
+	

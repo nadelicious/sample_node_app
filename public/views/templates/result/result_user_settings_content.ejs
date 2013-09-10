@@ -1,0 +1,24 @@
+<form method="post" id="user-form" class="user-form" enctype="multipart/form-data" action="/result/edit-user">
+	<h2> Profile Settings </h2>
+	<div class="settings-container row">
+		<div class="span2">
+			<img src="/images/photo/<%= user_sess.photo %>">
+			<p><b>Date Registered: </b> </p>
+			<p><%= user_sess.date_registered %></p>
+		</div>
+		<div class="span5">
+		    <input type="hidden" name="user_id" value="<%= user_sess._id%>">
+			<p class="note">Note: Changes will take effect once you <a href="/logout"> sign out</a> </p>
+			<input type="text" name="username" value="<%= user_sess.username %>" placeholder="username" class="input-block-level" autocomplete="off">
+			<input type="hidden" hname="username" value="<%= user_sess.username %>">
+			<input type="text" name="password" value="" placeholder="password" class="input-block-level" autocomplete="off">
+			<input type="text" name="email" value="<%= user_sess.email %>" placeholder="email" class="input-block-level" autocomplete="off">
+			<input type="hidden" hname="email" value="<%= user_sess.email %>">
+			<input type="text" name="location" value="<%= user_sess.location %>" placeholder="location" class="input-block-level" autocomplete="off">
+			<input type="hidden" hname="location" value="<%= user_sess.location %>">
+			<label>Upload your Photo <input type="file" name="photo" value=""  class="input-block-level" autocomplete="off"></label>
+			<label class="checkbox">Account status: <input type="checkbox" name="_active" value="true" checked></label>
+			<input type="submit" class="btn btn-large btn-primary" value="submit">
+		</div>
+	</div>	
+</form>

@@ -1,0 +1,23 @@
+{
+  "name": "project",
+  "version": "0.0.0",
+  "description": "a sample node.js application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "[project",
+    "node.js]"
+  ],
+  "author": "Ronald R. Gemao",
+  "license": "BSD",
+  "dependencies": {
+    "express": "~3.3.8",
+    "underscore": "~1.5.1",
+    "mongoose": "~3.6.18",
+    "ejs": "~0.8.4",
+    "moment": "~2.1.0"
+  }
+}
