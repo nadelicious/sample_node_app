@@ -1,4 +1,3 @@
-//var stream = require('fs');
 var mongoose = require('mongoose');
 var _= require('underscore');
 
@@ -8,10 +7,7 @@ var Item = mongoose.model('cl_items', {
   itemname: String,
   sale_type: String,
   price_range: String,
-  guitar_type: String,
-  brand: String,
   description: String,
-  tags: String,
   image1:String,
   image2: String,
   location: String,
@@ -29,7 +25,7 @@ var item= new Item(newData);
 }
 
 exports.displayAll= function(data,limit,callback){
-	var data = (!_.isEmpty(data)) ?data : {};
+	var data = (!_.isEmpty(data)) ? data : {};
 	Item.find(data,function(err,item){
 		if(err) return callback(err);
 	}).limit(limit).sort({'date_registered': 1}).exec(function(err,docs){

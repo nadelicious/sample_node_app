@@ -98,7 +98,7 @@ var global = {
 							search_container.html();
 							var list='';
 							$.each(data,function(k,v){
-								list+='<a href="/result/item?item_id='+v._id+'"><ul class="clearfix"><li><img src="/images/img/test.jpg" width="80" height="30"><div class="list-username"><b>-'+v.username+'-</b></div></li>';
+								list+='<a href="/result/item?item_id='+v._id+'"><ul class="clearfix"><li><img src="/images/img/'+v.image1+'" width="80" height="30"><div class="list-username"><b>-'+v.username+'-</b></div></li>';
 								list+='<li class="search-items"><div class="list-item-name">'+v.itemname+'</div><div class="list-sale-type"><span class="sale-type-small">For Sale </span></div><div class="list-location">'+v.location+'</div><div class="list-price"><span class="price-range-small">'+v.price_range+'</span></div></li></ul></a>';
 							});
 							search_container.html(list);
@@ -108,7 +108,44 @@ var global = {
 				});
 			}	
         });
+	},
+	
+	deleteComment: function(elem){
+		var _this =this;
+		var el=null;
+		if(elem){
+			elem.each(function(){
+				$(this).on('click',function(ev){
+					if(_this.ajax) _this.ajax.abort();	
+					_this.ajax = $.ajax({
+						url:'/result/remove-comment',
+						type: 'post',
+						data: {
+							user_id: $(this).attr('user_id'),
+							_id: $(this).attr('cid'),
+						}
+					});
+					_this.ajax.done(function(data){
+						if(data){
+							$(ev.target).parents('ul').fadeOut();
+						}
+					});
+				});
+			});
+		} else return;
+	},
+	
+	toggleContainer: function(elem){
+		if(elem){
+			elem.each(function(){
+				$(this).on('click',function(){
+					$(this).next().slideToggle();
+				});	
+			});
+		}else return;	
 	}
+	
+	
 	
 	
 };

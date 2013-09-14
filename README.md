@@ -11,6 +11,8 @@
 * Ability to search items(autosuggestion)
 * Ability to upload item pics
 * Ability to update and delete posts
+* Ability to post a comment
+* Ability to delete his own comment
 
 
 ####This node sample application is built on top of the following libraries :
@@ -23,19 +25,21 @@
 * [Underscorejs](http://underscorejs.org/) -  Utility-belt library for JavaScript
 * [Moment.js](http://momentjs.com/) - Lightweight Date Library
 * [Twitter Bootstrap](http://twitter.github.com/bootstrap/) - UI Component & Layout Library
+* [Jquery](http://jquery.com) - Javascript Library
+
 
 
 #### NOTE
 
 * This node application  is not already finished but it is working according to its functionalities.
-* There are some minor touches and algorithms( e.g redirections, trappings etc.) need to be added. :)
+* There are some minor touches and algorithms( e.g redirections, trappings,sortings etc.) need to be added. :)
 * Design is not already finalized. :) (very very busy)
 
 
 #### SPECIAL THANKS
 
 * SINET and Staff
-* Mr. James  Santos, Mr. Eleazar Pepito
+* Mr. James  Santos
 * USC CISCO LAB and Faculty
 
 

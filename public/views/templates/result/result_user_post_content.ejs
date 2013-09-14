@@ -2,10 +2,10 @@
  var count=0;
  if(data.main_content.length!=0){
 %>
-<h2 class="form-signin-heading">My Posted Items</h2>
+<h2 class="form-signin-heading formalize">My Posted Items</h2>
 <% data.main_content.forEach(function(k){ count++; %>
-	<h3 class="separator"><%= count %> <span><%= k.date_posted %> </span> </h3>
-	<form method="post" id="mypost-form" class="mypost-form" enctype="multipart/form-data" action="/result/edit-item">
+	<h3 toggle_btn class="separator">(<%= count %>) - <%= k.itemname %> -<span><%= data.moment(k.date_posted).format('MM/DD/YY - hh:mm:ss') %> </span> </h3>
+	<form method="post" id="mypost-form" class="mypost-form" enctype="multipart/form-data" action="/result/edit-item" style="display:none;" toggle_con>
 		<div class="row">
 			<input type="hidden" name="user_id" value="<%= k.user_id %>">
 			<input type="hidden" name="item_id" value="<%= k._id %>"
@@ -27,26 +27,9 @@
 			</select>
 			<p class="span2">Price range:</p>
 			<input type="text" name="price_range" value="<%= k.price_range %>"placeholder="Price Range" class="span5" required autocomplete="off">
-			<p class="span2">Guitar type:</p>
-			<select name="guitar_type" class="span5">
-				<% 
-					var sel=['Electric guitar', 'Bass guitar', 'Acoustic guitar'];
-					var opt='';
-					sel.forEach(function(s){
-						if(k.guitar_type==s) opt='selected'
-						else opt=''
-				%>	
-					<option value="<%= s %>" <%= opt %>><%= s %> </option>		
-					
-				<%})%>
-			</select>
-			<p class="span2">Brand:</p>
-			<input type="text" name="brand" value="<%= k.brand %>" placeholder="Brand" class="span5" required autocomplete="off">
 		</div>
 		<p>Description:</p>
 		<textarea name="description" placeholder="Describe your item"  required class="form-textarea"><%= k.description %></textarea>
-		<p>Tags</p>
-		<textarea name="tags" placeholder="Tags"  required  autocomplete="off" class="form-textarea"><%= k.tags %></textarea>
 		<img src="/images/img/<%= k.image1 %>" height="50" width="100"> <input type="file" name="image1"  >
 		 <p> &nbsp; </p>
 		<img src="/images/img/<%= k.image2 %>" height="50" width="100"> <input type="file" name="image2"   >
@@ -57,7 +40,7 @@
 			<p class="span2">Contact no:</p>
 			<input type="text" name="contact_no" value="<%= k.contact_no %>" placeholder="Contact Number" class="span5"   required autocomplete="off">
 		</div>	
-			<input type="submit" class="btn btn-large btn-primary" value="Update" name="todo"> <input type="submit" class="btn btn-large btn-primary" value="Delete" name="todo">				
+			<input type="submit" class="btn btn-small btn-primary" value="Update" name="todo"> <input type="submit" class="btn btn-small btn-primary" value="Delete" name="todo">				
 	</form>
 <%}); } else { %>
 <p>No Posted Items</p>

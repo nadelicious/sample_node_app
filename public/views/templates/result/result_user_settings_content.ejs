@@ -1,10 +1,10 @@
 <form method="post" id="user-form" class="user-form" enctype="multipart/form-data" action="/result/edit-user">
-	<h2> Profile Settings </h2>
+	<h3 class="formalize"> Profile Settings </h3>
 	<div class="settings-container row">
 		<div class="span2">
 			<img src="/images/photo/<%= user_sess.photo %>">
 			<p><b>Date Registered: </b> </p>
-			<p><%= user_sess.date_registered %></p>
+			<p><%= data.moment(user_sess.date_registered).format('MM/DD/YY - hh:mm:ss') %></p>
 		</div>
 		<div class="span5">
 		    <input type="hidden" name="user_id" value="<%= user_sess._id%>">
@@ -18,7 +18,7 @@
 			<input type="hidden" hname="location" value="<%= user_sess.location %>">
 			<label>Upload your Photo <input type="file" name="photo" value=""  class="input-block-level" autocomplete="off"></label>
 			<label class="checkbox">Account status: <input type="checkbox" name="_active" value="true" checked></label>
-			<input type="submit" class="btn btn-large btn-primary" value="submit">
+			<input type="submit" class="btn btn-small btn-primary" value="submit">
 		</div>
 	</div>	
 </form>

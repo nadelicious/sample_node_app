@@ -1,42 +1,58 @@
 <% if(data.main_content._id!=null){ %>
-	<h3>Latest Post</h3>
+	<h3 class="formalize" >Latest Post</h3>
 	<div class="home-item-poster"> 
 		<ul>
-			<li><b>Posted by:</b> <%= data.main_content.username %>  </li>
-			<li><b>Date Posted:</b>  <%= data.main_content.date_posted %>  </li>
-			<li><b>Location:</b>   <%= data.main_content.location %> </li>
+			<li>@<%= data.main_content.username %> - <%= data.moment(data.main_content.date_posted).format('MM/DD/YY - hh:mm:ss') %> </li>
+			<li><%= data.main_content.location %> - <%= data.main_content.contact_no %> </li>
 		</ul>
 	</div>	
 
 	<div class="home-item-profile"> 
 		<ul>
-			<li><b><span class="sale-type"><%= data.main_content.sale_type %></span> </b>  </li>
-			<li><b>Item name:</b>   <%= data.main_content.itemname %> </li>
-			<li><b>Guitar Type: </b>  <%= data.main_content.guitar_type %> </li>
-			<li><b>Brand: </b>  <%= data.main_content.brand %> </li>
-			<li><b>Price Range:</b> <span class="price-range">  <%= data.main_content.price_range %></span> </li>
+			<li><b><%= data.main_content.itemname %></b> </li>
+			<li><span class="sale-type"><%= data.main_content.sale_type %></span> - <span class="price-range">  <%= data.main_content.price_range %></span> </li>
 		</ul>
 	</div>	
 
 	<div class="home-item-description">
-		<b>Item Description</b>
 		<p><%= data.main_content.description %> </p>
 	</div>
 
 	<div class="home-item-photos"> 
-		<b>Photos</b>
 		<ul class="row">
 			<li class="span2"><img src="/images/img/<%= data.main_content.image1 %>"> </li>
 			<li class="span2"><img src="/images/img/<%= data.main_content.image2 %>"> </li>
 		</ul>
 	</div>	
 		
-
-	<div class="home-item-contact"> 
-		<ul>
-			<li><b>Contacts:</b> <%= data.main_content.contact_no %>  </li>
-		</ul>
-	</div>	
+	<div class="message-container">
+		<form action="/result/add-comment" method="post" >
+			<input type="hidden" name="item_id" value="<%= data.main_content._id %>">
+			<input type="hidden" name="user_id" value="<%= user_sess._id %>">
+			<input type="hidden" name="username" value="<%= user_sess.username %>">
+			<input type="hidden" name="photo" value="<%= user_sess.photo %>">
+			<textarea name="comment" placeholder="Leave a Message"  required class="form-textarea input-block-level"></textarea>
+			<input type="submit" class="btn btn-small btn-primary" value="submit">
+		</form>	
+	</div>
+	
+	<div class="comments-container">
+		<div class="yellow">comments(<%= data.comments.count %>)</div>
+			<% data.comments.content.forEach(function(com){ %>
+				<ul class="row">
+					<li class="">
+						<img src="/images/photo/<%= com.photo %>" width="150" height="100">
+					</li>
+					<li class="yellow coms">
+						<p>@<%= com.username %></p>
+						<p><%= com.comment %></p>
+						<% if(user_sess._id == com.user_id){ %>
+							<a href="javascript:void(0);"  user_id="<%= com.user_id %>" cid="<%= com._id %>" >remove post </a>
+						<% } %>	
+					</li>
+				</ul>
+			<% }) %>
+		</div>
 <% } else { %>
  <p>No Results </p>
 <% } %>

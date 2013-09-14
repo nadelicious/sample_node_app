@@ -8,14 +8,14 @@
 			<a href="/result/item/?item_id=<%= item._id%>">
 				<ul class="clearfix">
 					<li>
-						<img src="/images/photo/<%= user_sess.photo %>" width="80" height="30">
-						<div class="list-username"><b>-<%= item.username %>-</b></div>
+						<img src="/images/img/<%= item.image1 %>" width="80" height="30">
 					</li>
 					<li class="search-items">
 						<div class="list-item-name"><%= item.itemname %></div>
 						<div class="list-sale-type"><span class="sale-type-small"><%= item.sale_type %> </span></div>
 						<div class="list-location"><%= item.location %></div>
 						<div class="list-price"><span class="price-range-small"><%= item.price_range %></span></div>
+						<div class="list-username pull-right">@<%= item.username %></div>
 					</li>
 				</ul>	
 			</a>
