@@ -1,6 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var route =require('./routes/routes.js');
+var route =require('./routes/route.js');
 var app =express();
 
 mongoose.connect('localhost', 'db_project');
